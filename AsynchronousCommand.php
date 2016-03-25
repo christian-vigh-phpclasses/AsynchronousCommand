@@ -581,7 +581,7 @@ class  AsynchronousCommand
 		
 	    RETURN VALUE
 		The data read from the child process standard output.
-		For the ReadLine(), the trailing newline is stripped from the returned value.
+		For ReadLine(), the trailing newline is stripped from the returned value.
 	    
 	  ===========================================================================================================*/
 	public function  Read ( )
@@ -622,10 +622,6 @@ class  AsynchronousCommand
 		Runs the command specified on the AsynchronousCommand constructor.
 		Output pipes are set to non-blocking (except on Windows platforms=.
 		
-	    PARAMETERS
-		
-	    RETURN VALUE
-	    
 	  ===========================================================================================================*/
 	public function  Run ( )
 	   {
