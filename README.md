@@ -213,3 +213,16 @@ Runs the command specified to the AsynchronousCommand constructor.
 **$signal (integer) -**
 
 *(Unix systems only)* Signal to be sent to the running process.
+
+
+## Write, WriteLine ##
+
+Writes data to the standard input of the child process.
+
+This only works when the $pipe_stdin parameter of the class constructor has been set to true.
+
+### Prototype ###
+
+		$cmd -> Write 		( $str [, $length ] ) ;
+		$cmd -> WriteLine 	( $str ) ;
+
