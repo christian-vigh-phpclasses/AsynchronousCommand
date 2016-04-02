@@ -32,7 +32,7 @@
 		$cmd = new AsynchronousCommand ( "somecommand" ) ;
 		$cmd -> Run ( ) ;
 
-		output ( "Execute pid = " . $cmd -> GetPid ( ) ) ;
+		echo ( "Execute pid = " . $cmd -> GetPid ( ) . "\n" ) ;
 		while  ( $cmd -> IsRunning ( ) )
 		   {
 			while  ( ( $data = $cmd -> ReadLine ( ) )  !==  false )
@@ -47,8 +47,8 @@
 			    }
 		    }
 		 
-		output ( "Finished, exit code = " . $cmd -> GetExitCode ( ) ) ;
 		$cmd -> Terminate ( ) ;	
+		output ( "Finished, exit code = " . $cmd -> GetExitCode ( ) ) ;
 		
 	It is also possible to write to the child process standard input ; for that, just instanciate the
 	command object using "true" as the second parameter ($pipe_stdin) :
@@ -161,8 +161,6 @@ class  AsynchronousCommand
 	  ===========================================================================================================*/
 	public function  __construct  ( $command, $pipe_stdin = false, $run = false )
 	   {
-		parent::__construct ( ) ;
-		
 		// Analyze the command to redirect its standard error.
 		$this -> Command 	=  $this ->  RedirectStderr ( $command ) ;
 		
@@ -707,7 +705,7 @@ class  AsynchronousCommand
         A class for commands to be run in background.
 
   ==============================================================================================================*/
-class  BackgroundCommand	extends  Object 
+class  BackgroundCommand
    {
 	public function  __construct ( )
 	   {
